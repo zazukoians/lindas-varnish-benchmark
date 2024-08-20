@@ -2,6 +2,8 @@
 
 This repo is just here to share how to quickly perform a load test against a Varnish instance that is in front of a SPARQL endpoint.
 
+Varnish is agnostic of the exact SPARQL queries used (once preloaded) and thus can be concluded that as long as similar queries and response sizes are given it is expected to behave similarly.
+
 ## Requirements
 
 - [k6](https://grafana.com/docs/k6/latest/set-up/install-k6/)
@@ -55,3 +57,9 @@ default ✓ [======================================] 100 VUs  10s
 ```
 
 This means that the Varnish endpoint was able to handle aroud 100 requests per second, once entries are cached.
+
+## Related projects
+
+- [Varnish](https://varnish-cache.org/), a caching solution
+- [varnish-post](https://github.com/zazuko/varnish-post), used to cache POST requests
+- [clear-sparql-cache-endpoint](https://github.com/zazuko/clear-sparql-cache-endpoint), used to purge the cache for some particular Varnish tags, using a SPARQL query

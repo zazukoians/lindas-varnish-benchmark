@@ -576,6 +576,8 @@ export default () => {
 
   const res = http.post(endpoint, {
     query,
+  }, {
+    headers: { 'Accept-Encoding': 'gzip' },
   });
 
   check(res, {
